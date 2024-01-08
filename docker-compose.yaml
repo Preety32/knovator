@@ -44,7 +44,7 @@ services:
     environment: 
       - POSTGRES_PASSWORD=1234
     ports: 
-      - "5432:5432"
+      - "5433:5432"
     networks: 
       - node-network
 

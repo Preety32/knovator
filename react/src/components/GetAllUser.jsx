@@ -2,9 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const GetAllUser = () => {
-
   const [users, setAllUser] = useState();
-
   useEffect(() => {
     axios
       .get("http://localhost:8000/api/all")
@@ -13,7 +11,6 @@ const GetAllUser = () => {
         console.error(err);
       });
   }, []);
-
     return (
       <>
         <h1>All Users</h1>

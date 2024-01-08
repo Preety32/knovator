@@ -12,7 +12,7 @@ const client = new Client({
   port: 5432,
 });
 
-client.connect();
+//client.connect();
 
 const createTable = async () => { 
     await client.query(`CREATE TABLE IF NOT EXISTS users 
@@ -20,13 +20,13 @@ const createTable = async () => {
     email VARCHAR (255) UNIQUE NOT NULL, age INT NOT NULL);`)
   };
   
-createTable();
+//createTable();
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/api', (req, res) => res.send('Hello World!'));
+app.get('/', (req, res) => res.send('Hello World!'));
 
 app.get('/api/all', async (req, res) => {
     try {

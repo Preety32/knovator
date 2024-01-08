@@ -8,7 +8,6 @@ const PostUser = () => {
       age: '',
       email: '',
     })
-
     const createUser = async () => {
       await axios
       .post("http://localhost:8000/api/form", 
@@ -31,7 +30,6 @@ const PostUser = () => {
         return alert(err);
       });
     }
-
     const onChangeForm = (e) => {
       if (e.target.name === 'name') {
         setUser({...user, name: e.target.value});
@@ -41,7 +39,6 @@ const PostUser = () => {
         setUser({...user, email: e.target.value});
       }
   }
-
     return (
       <div >
           <div>

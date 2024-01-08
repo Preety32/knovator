@@ -16,10 +16,8 @@ const Layout = () => {
           </li>
         </ul>
       </nav>
-
       <Outlet />
     </>
   )
 };
-
 export default Layout;
