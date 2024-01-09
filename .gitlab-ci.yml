@@ -1,0 +1,30 @@
+stages:
+  - build
+  - deploy
+
+variables:
+  NODE_IMAGE: node:14
+
+before_script:
+  - echo "Before script steps"
+
+cache:
+  paths:
+    - node_modules/
+
+build:
+  stage: build
+  script:
+    - echo "Building Node.js application"
+    - cd node
+    - docker build -t node-multistage .
+    - cd ..
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploying React application"
+    - cd react
+    - docker build -t react-multistage .
+    - cd ..
+
